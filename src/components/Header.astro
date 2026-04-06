@@ -1,0 +1,21 @@
+---
+
+---
+<header class="w-full fixed">
+  <nav class="bg-negro h-8">
+
+  </nav>
+  <div id="progress-bar" class="w-0 h-0.5 bg-amber-200 transition-all"></div>
+</header>
+
+<script>
+  const proggresBar = document.getElementById("progress-bar");
+
+  window.addEventListener('scroll',()=>{
+    const scrollTop = window.scrollY;
+    const alturaTotal = document.documentElement.scrollHeight - window.innerHeight;
+    const progreso = (scrollTop/alturaTotal) * 100;
+    proggresBar!.style.width = `${progreso}%`;
+    console.log({progreso,alturaTotal,scrollTop});
+  })
+</script>
